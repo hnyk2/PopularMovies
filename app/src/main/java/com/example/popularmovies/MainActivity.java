@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,7 +27,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements DataTransferInterface {
     private static final String TAG = "MainActivity";
     ProgressBar progressBar;
     private ImageView imageView;
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showView() {
 
-        DataAdapter dataAdapter = new DataAdapter(MainActivity.this, imageUrls);
+        DataAdapter dataAdapter = new DataAdapter(MainActivity.this, imageUrls,this);
         recyclerView.setAdapter(dataAdapter);
         recyclerView.setLayoutManager(gridLayoutManager);
 
@@ -105,6 +106,17 @@ public class MainActivity extends AppCompatActivity {
         });
         requestQueue.add(jsonObjectRequest);
 
+
+    }
+    @Override
+    public void movieClick(ImageUrl imageUrl, ImageView imageView) {
+
+        Intent intent = new Intent(this, MovieActivity.class);
+        intent.putExtra("movie-title", imageUrl.getTitle());
+        intent.putExtra("movie-backdrop", imageUrl.getBackPath());
+        intent.putExtra("movie-overview", imageUrl.getOverView());
+        intent.putExtra("movie-release", imageUrl.getReleaseDate());
+        startActivity(intent);
 
     }
 

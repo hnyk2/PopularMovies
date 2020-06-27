@@ -40,7 +40,7 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        //Glide.with(context).load(imageUrl.get(position).getImageUrl()).into(holder.img);
+
         Glide.with(context).load(imageUrl.get(position).getImageUrl()).into(holder.img);
 
     }
