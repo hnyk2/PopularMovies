@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MovieActivity"
-    android:background="@color/cardview_shadow_end_color">
-
+    android:background="#1A1D32"
+    tools:context=".MovieActivity">
 
 
     <ImageView
@@ -14,60 +13,60 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/ic_launcher_background"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="2dp" />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#3F51B5"
-        android:layout_marginBottom="@dimen/cardview_compat_inset_shadow"
+        android:layout_below="@+id/backdrop"
+        android:layout_margin="10px"
+        android:layout_marginTop="25dp"
         android:padding="12px"
         android:text="TextView"
-        android:textColor="#FFFFFF"
+        android:textColor="#FFC107"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.035"
-        android:layout_margin="10px"/>
+        app:layout_constraintTop_toBottomOf="@+id/backdrop"
+        app:layout_constraintVertical_bias="0.037" />
 
     <TextView
         android:id="@+id/release"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#3F51B5"
-        android:layout_marginBottom="@dimen/cardview_compat_inset_shadow"
+        android:layout_below="@+id/backdrop"
+        android:layout_margin="10px"
         android:padding="12px"
         android:text="TextView"
-        android:layout_below="@+id/title"
-        android:textColor="#FFFFFF"
+        android:textColor="#FFC107"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.095"
-        android:layout_margin="10px"/>
+        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/backdrop"
+        app:layout_constraintVertical_bias="0.042" />
 
     <TextView
         android:id="@+id/overview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/backdrop"
+        android:layout_below="@+id/title"
         android:layout_margin="16px"
-        android:background="#3F51B5"
+        android:layout_marginTop="27dp"
         android:padding="12px"
         android:text="TextView"
-
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backdrop"
-        app:layout_constraintVertical_bias="0.191" />
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintVertical_bias="0.055" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
